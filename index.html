@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Huawei App Link Converter</title>
+</head>
+<body>
+
+<h3>Enter original AppGallery URL:</h3>
+<input type="text" id="originalUrl" placeholder="https://appgallery.huawei.com/app/C102577521">
+<button onclick="convertUrl()">Convert</button>
+
+<h3>Direct Download URL:</h3>
+<p id="convertedUrl"></p>
+
+<script>
+function convertUrl() {
+  const input = document.getElementById('originalUrl').value.trim();
+  if(input.startsWith('https://appgallery.huawei.com/app/')) {
+    const converted = input.replace('https://appgallery.huawei.com/app/', 'https://appgallery.cloud.huawei.com/appdl/');
+    document.getElementById('convertedUrl').textContent = converted;
+  } else {
+    document.getElementById('convertedUrl').textContent = 'Invalid AppGallery URL';
+  }
+}
+</script>
+
+</body>
+</html>
