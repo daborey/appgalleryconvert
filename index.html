@@ -19,11 +19,13 @@
 <script>
 function convertUrl() {
   const input = document.getElementById('originalUrl').value.trim();
+  const output = document.getElementById('convertedUrl');
   if(input.startsWith('https://appgallery.huawei.com/app/')) {
     const converted = input.replace('https://appgallery.huawei.com/app/', 'https://appgallery.cloud.huawei.com/appdl/');
-    document.getElementById('convertedUrl').textContent = converted;
+    // Make it clickable
+    output.innerHTML = `<a href="${converted}" target="_blank">${converted}</a>`;
   } else {
-    document.getElementById('convertedUrl').textContent = 'Invalid AppGallery URL';
+    output.textContent = 'Invalid AppGallery URL';
   }
 }
 </script>
